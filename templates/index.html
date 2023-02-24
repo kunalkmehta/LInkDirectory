@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+   
+{% block body %}
+    
+
+   <div class = 'container'>
+
+        <form action = '/' method = 'post'>
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title" name = 'title' aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+              <label for="link" class="form-label">Link</label>
+              <input type="text" class="form-control" id="link" name = 'link'>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+    </div>
+
+<div class = 'container'>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titke</th>
+            <th scope="col">Link</th>
+            <th scope="col">Date</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for link_var in link_all %}
+
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{link_var.title}}</td>
+                <td>{{link_var.link}}</td>
+                <td>{{link_var.link_dt}}</td>
+                <td>
+                    <a href = '/' <button type="button" class="btn btn-outline-dark">Update</button> </a>
+                    <a href = '/' <button type="button" class="btn btn-outline-dark">Delete</button> </a>
+
+                </td>
+              </tr>
+                
+            {% endfor %}
+
+
+        </tbody>
+      </table>
+</div>
+
+{% endblock body %} 
