@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+   
+{% block body %}
+
+
+<div class = 'container'>
+
+    <form action = '/update/{{link_update.id}}' method = 'post'>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" value= {{link_update.title}} name = 'title' aria-describedby="emailHelp">
+
+        </div>
+
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <input type="text" class="form-control" id="category" value= {{link_update.category}} name = 'category'>
+        </div>
+
+        <div class="mb-3">
+          <label for="link" class="form-label">Link</label>
+          <input type="text" class="form-control" id="link" value= {{link_update.link}} name = 'link'>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+</div>
+
+
+
+
+{% endblock body %} 

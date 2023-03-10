@@ -11,6 +11,12 @@
               <input type="text" class="form-control" id="title" name = 'title' aria-describedby="emailHelp">
 
             </div>
+
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <input type="text" class="form-control" id="category" name = 'category'>
+            </div>
+
             <div class="mb-3">
               <label for="link" class="form-label">Link</label>
               <input type="text" class="form-control" id="link" name = 'link'>
@@ -26,7 +32,8 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Titke</th>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
             <th scope="col">Link</th>
             <th scope="col">Date</th>
             <th scope="col">Action</th>
@@ -38,11 +45,12 @@
             <tr>
                 <th scope="row">{{ loop.index }}</th>
                 <td>{{link_var.title}}</td>
+                <td>{{link_var.category}}</td>
                 <td>{{link_var.link}}</td>
                 <td>{{link_var.link_dt}}</td>
                 <td>
-                    <a href = '/' <button type="button" class="btn btn-outline-dark">Update</button> </a>
-                    <a href = '/' <button type="button" class="btn btn-outline-dark">Delete</button> </a>
+                    <a href = '/update/{{link_var.id}}' <button type="button" class="btn btn-outline-dark">Update</button> </a>
+                    <a href = '/delete/{{link_var.id}}' <button type="button" class="btn btn-outline-dark">Delete</button> </a>
 
                 </td>
               </tr>
